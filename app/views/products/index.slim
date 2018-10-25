@@ -1,0 +1,17 @@
+= link_to 'Create Product', new_product_path
+table
+  th
+    tr
+      td id
+      td name
+      td description
+      td price
+  tbody
+    - @products.each do |product|
+      tr
+        td = product.id
+        td = product.name
+        td = product.description
+        td = product.price
+        td = link_to 'edit', edit_product_path(product)
+        td = link_to 'delete', product_path(product), method: :delete
