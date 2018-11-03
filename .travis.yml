@@ -1,9 +1,10 @@
 language: ruby
 rvm:
   - 2.4.1
-dist:
+services:
+  - postgresql
 addons:
-  postgresql: 9.6
+  postgresql: "9.6"
 before_script:
   - cp config/database.yml.example config/database.yml
   - psql -c 'create database SC_test;' -U postgres
